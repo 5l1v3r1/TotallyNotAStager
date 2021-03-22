@@ -22,8 +22,6 @@ func handler(){
 
 func srv(w http.ResponseWriter, r *http.Request){
 
-	module := "a.bin"
-
 	data, err := ioutil.ReadFile(module)
 	if err != nil {
 
