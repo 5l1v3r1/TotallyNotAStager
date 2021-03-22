@@ -14,6 +14,8 @@ type FlagOptions struct {
 
 }
 
+var payload []byte 
+
 func options() *FlagOptions {
 
 	help := flag.Bool("h", false, "Help Menu")
@@ -47,6 +49,14 @@ func main() {
 	
 	} else {
 
+		data, err := ioutil.ReadFile(module)
+		if err != nil {
+	
+			fmt.Println(err)
+	
+		}
+
+		payload = data
 		handler() // do the actual shizz if you know what I mean
 
 	}

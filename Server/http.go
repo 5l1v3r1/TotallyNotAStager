@@ -22,17 +22,7 @@ func handler(){
 
 func srv(w http.ResponseWriter, r *http.Request){
 
-	data, err := ioutil.ReadFile(module)
-	if err != nil {
-
-		fmt.Println(err)
-		fmt.Fprintf(w, "")
-
-	}
-	
-	// Add encryption here
-	
-	ret := base64.StdEncoding.EncodeToString(data) 
+	ret := base64.StdEncoding.EncodeToString(payload) 
 	fmt.Fprintf(w, ret)
 
 }
