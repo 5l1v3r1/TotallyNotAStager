@@ -5,7 +5,6 @@ import(
 	"fmt"
 	"log"
 	"net/http"
-	"io/ioutil"
 	"encoding/base64"
 	"github.com/gorilla/mux"
 

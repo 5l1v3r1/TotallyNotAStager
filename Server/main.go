@@ -4,6 +4,7 @@ import (
 
 	"fmt"
 	"flag"
+	"io/ioutil"
 
 )
 
@@ -41,7 +42,7 @@ func main() {
 		fmt.Println("Server.exe -m <module.bin>")
 		return
 
-	} if opt.module == "" {
+	} else if opt.module == "" {
 	
 		fmt.Println("Server.exe -m <module.bin>")
 		return
@@ -49,7 +50,9 @@ func main() {
 	
 	} else {
 
-		data, err := ioutil.ReadFile(module)
+		
+
+		data, err := ioutil.ReadFile(opt.module)
 		if err != nil {
 	
 			fmt.Println(err)
